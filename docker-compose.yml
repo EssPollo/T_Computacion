@@ -3,14 +3,14 @@ version: "3.9"
 services:
   web:
     build: .
-    container_name: django_container
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    container_name: proyecto_final_TC
+    command: bash -c "python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
-      - DJANGO_SETTINGS_MODULE=back_end_django.settings
+      - DJANGO_SETTINGS_MODULE=lenguaje.settings
     env_file:
       - .env
   nginx:
